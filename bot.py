@@ -105,7 +105,7 @@ def train_nlu():
 
 
     training_data = load_data("data/mobile_nlu_data.json")
-    trainer = Trainer(RasaNLUConfig("mobile_nlu_model_config.json"))
+    trainer = Trainer(config.load("mobile_nlu_model_config.json"))
     trainer.train(training_data)
     model_directory = trainer.persist("models/", project_name="ivr", fixed_model_name="demo")
 
